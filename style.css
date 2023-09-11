@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid aqua;  */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;   
+    transition: 0.2s;
+  }
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;    
+
+    --bg-color: #000;
+
+    --user-input-bg-color: #0a2329;
+    --user-input-text-color: #888896;
+    --button-bg-color: #065E7C;
+    --button-bg-color-hover: #FFFFFF;
+    --button-text-color: #FFFFFF;
+    --button-text-color-hover: #065E7C;
+    --button-font-size: 1.4rem;
+
+    --table-text-color: #E1E1E6;
+    --table-empty-text-color: #4E5455;
+    --table-del-font-color: #F75A68;
+    --table-header-bg-color: #092D38;
+    --table-even-bg-row-color: #08242c;
+    --table-odd-bg-row-color: #06181C; 
+    --table-border-color: #4A808C;
+    --table-scroll-bg-color: #4A808C;
+    --table-font-size: 2rem;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--table-text-color);
+    background-color: var(--bg-color);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    margin: 11.5rem auto;
+    align-items: center;
+    max-width: 112rem;
+    padding: 0 8rem;
+}
+
+header, #search, #search-button {
+    display: flex;
+    align-items: center;    
+}
+
+header {
+    margin-bottom: 8.7rem;
+    justify-content: space-between;
+}
+
+#search {
+    gap: 0.8rem;
+}
+
+#search input {
+    height: 4.8rem;
+    width: 43rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0 1.6rem;
+
+    color: var(--user-input-text-color);
+    background: var(--user-input-bg-color);
+}
+
+#search-button {
+    height: 4.8rem;
+    width: 17rem;
+    border-radius: 0.5rem;
+
+    align-items: center;
+    justify-content: center; 
+    gap: 0.8rem;
+
+    background-color: var(--button-bg-color);
+    cursor: pointer;
+}
+
+#search-button img {
+    height: 2.4rem;
+    width: 2.4rem;    
+}
+
+#search-button p {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--button-text-color);
+}
+
+#search-button:hover {    
+    background-color: var(--button-bg-color-hover);   
+    color: var(--button-text-color-hover); 
+}
+
+#search-button:hover img {
+    var(--button-text-color-hover);
+}
+
+#search-button:hover p {
+    color: var(--button-text-color-hover);
+}
+
+#table-container {
+    height: 60vh;
+    overflow: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;   
+    font-size: var(--table-font-size);
+    border: 1px solid var(--table-border-color); 
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+tbody {
+    display: block;
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#col-users, #col-repositories, #col-followers {
+    cursor: pointer;
+}
+
+table tr:nth-child(even) {
+    background: var(--table-even-bg-row-color);
+}
+  
+table tr:nth-child(odd) {
+    background: var(--table-odd-bg-row-color); 
+    border-top: 1px solid var(--table-border-color);   
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+table tr:first-child {
+    border-top: none;
+}
+
+table tr:last-child {
+    border-bottom: none;
+    border-bottom-right-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+}
+
+table thead {
+    height: 6.4rem;    
+}
+
+table thead th {
+    background: var(--table-header-bg-color);
+    text-align: left;
+    font-weight: 700;
+    border-top: none;    
+}
+
+tbody tr {
+    height: 10.4rem;
+}
+
+thead tr th, tbody tr td {
+    padding-left: 4rem;
+    padding-right: 2.4rem;
+}
+
+tr .user img {
+    width: 5.6rem;
+    height: 5.6rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+tr .user-data {
+    display: flex;
+    align-content: center;        
+    justify-content: left;
+    gap: 1.6rem;
+}
+
+tr .user-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+tr .user a {
+    text-decoration: none;
+    color: var(--table-text-color);
+}
+
+tr .user p {
+    font-weight: 700;
+}
+
+tr .delete-user {
+    color: var(--table-del-font-color);
+    cursor: pointer;
+}
+
+tr .user, tr th:first-child {
+    width: 50rem;
+}
+
+tr .repositories, 
+tr .followers,
+tr th:nth-child(2), 
+tr th:nth-child(3) {
+    max-width: 21.9rem
+}
+
+tr .delete-user, tr th:last-child {
+    max-width: 17.8rem;
+}
+
+thead th:first-child {
+    border-top-left-radius: 1.2rem;
+}
+  
+thead th:last-child {
+    border-top-right-radius: 1.2rem;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 1.2rem;
+}
+  
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 1.2rem;
+} 
+
+#table-container::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+    overflow: scroll;
+    overflow: overlay;
+}
+
+#table-container::-webkit-scrollbar-track {
+    display: block;
+    background-color: transparent;
+}
+
+#table-container::-webkit-scrollbar-thumb {
+    background: #4A808C;
+    border-radius: 10px;
+}
+
+#empty-user-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    height: 45rem;
+}
+
+#empty-user-list img {
+    width: 13.2rem;
+}
+
+#empty-user-list h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4rem;
+    color: var(--table-empty-text-color);
+}
+
+
+
