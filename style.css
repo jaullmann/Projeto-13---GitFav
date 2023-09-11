@@ -4,7 +4,7 @@
     /* border: 1px solid aqua;  */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;   
-    transition: 0.2s;
+    transition: 0.1s;
   }
 
 :root {
@@ -14,7 +14,8 @@
     --bg-color: #000;
 
     --user-input-bg-color: #0a2329;
-    --user-input-text-color: #888896;
+    --user-input-text-color: #cbcbd8;
+    --user-input-placeholder-text-color: #888896;
     --button-bg-color: #065E7C;
     --button-bg-color-hover: #FFFFFF;
     --button-text-color: #FFFFFF;
@@ -82,9 +83,15 @@ header {
     background: var(--user-input-bg-color);
 }
 
+#search input::placeholder {
+    font-style: italic;
+    color: var(--user-input-placeholder-text-color);
+}
+
 #search-button {
     height: 4.8rem;
     width: 17rem;
+    border: none;
     border-radius: 0.5rem;
 
     align-items: center;
@@ -95,9 +102,10 @@ header {
     cursor: pointer;
 }
 
-#search-button img {
+#search-button svg {
     height: 2.4rem;
-    width: 2.4rem;    
+    width: 2.4rem;
+    fill: var(--button-text-color);
 }
 
 #search-button p {
@@ -111,8 +119,8 @@ header {
     color: var(--button-text-color-hover); 
 }
 
-#search-button:hover img {
-    var(--button-text-color-hover);
+#search-button:hover svg {
+    fill: var(--button-text-color-hover);
 }
 
 #search-button:hover p {
@@ -120,8 +128,10 @@ header {
 }
 
 #table-container {
-    height: 60vh;
+    max-height: 60vh;
     overflow: auto; 
+    border: 1px solid var(--table-border-color); 
+    border-radius: 1.2rem;
 }
 
 table {
