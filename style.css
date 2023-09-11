@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid aqua;  */
+    /* border: 1px solid red;  */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;   
     transition: 0.1s;
@@ -177,8 +177,8 @@ table tr:last-child {
     border-bottom-left-radius: 1.2rem;
 }
 
-table thead {
-    height: 6.4rem;    
+table thead tr {
+    height: 6.4rem; 
 }
 
 table thead th {
