@@ -1,4 +1,5 @@
 export class GithubUser {
+    // async static function that gets a json data from Github users by the username provided
     static async search(username) {
         const endpoint = `https://api.github.com/users/${username}`
 
